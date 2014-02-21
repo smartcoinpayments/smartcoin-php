@@ -1,0 +1,17 @@
+{
+    "name": "navaska/navaska-php",
+    "description": "Navaska PHP library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "agranado",
+            "email": "agranado@navaska.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "simpletest/simpletest": "1.1.*"
+    }
+}
