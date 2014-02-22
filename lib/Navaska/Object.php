@@ -2,6 +2,11 @@
   namespace Navaska;
 
   class Object implements \ArrayAccess {
+    protected static $types = array(
+        'token'   => 'Token',
+        'card'    => 'Card',
+        'charge'  => 'Charge'
+      );
 
     protected $api_keys;
     protected $_values;
@@ -11,7 +16,13 @@
 
       if($params) {
         foreach($params as $key => $value) {
-          $this->_values[$key] = $value;
+          if(is_array($value) && array_key_exists('object',$value)) {
+            $klass = self::$types[$value['object']];
+            $this->_values[$key] = new $klass($value, $api_keys);
+          }
+          else {
+            $this->_values[$key] = $value;
+          }
         }
       }
 
