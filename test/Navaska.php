@@ -11,12 +11,10 @@ if(!$has_dependency){
 
 require_once(dirname(__FILE__) . '/../lib/Navaska.php');
 
-class Test_Navaska extends UnitTestCase {
-
-}
 
 require_once(dirname(__FILE__) . '/Navaska/ObjectTest.php');
 require_once(dirname(__FILE__) . '/Navaska/APIRequestTest.php');
 require_once(dirname(__FILE__) . '/Navaska/TokenTest.php');
+require_once(dirname(__FILE__) . '/Navaska/ChargeTest.php');
 
 ?>
