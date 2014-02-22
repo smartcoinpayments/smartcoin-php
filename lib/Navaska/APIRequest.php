@@ -2,6 +2,7 @@
   namespace Navaska;
 
   class APIRequest {
+    public static $api_base = 'http://localhost:3000';
 
     public static function request($method=null, $url=null, $api_keys=null, $params=null){
       if($method == NULL)
@@ -43,6 +44,7 @@
     private static function curl_request($method, $url, $api_keys, array $params = NULL){
       $ch = curl_init();
       $method = strtolower($method);
+      $url = self::$api_base.$url;
       $opts = array();
 
       if($method == 'get') {

@@ -7,6 +7,11 @@
     public function __construct($params=null) {
       $this->_values = array();
 
+      if($params) {
+        foreach($params as $key => $value) {
+          $this->_values[$key] = $value;
+        }
+      }
     }
 
     // Standard accessor magic methods
