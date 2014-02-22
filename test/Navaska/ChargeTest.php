@@ -1,14 +1,18 @@
 <?php
   class Test_Navaska_Charge extends UnitTestCase {
+    $api_keys;
+    $token;
 
-    function test_create_and_retrieve_charge() {
+    function setUp() {
       $api_keys = 'pk_test_0208ca9d84d92a:sk_test_62a57820440d47';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'name' => 'Arthur Granado');
       $token = \Navaska\Token::create($params, $api_keys);
+    }
 
+    function test_create_and_retrieve_charge() {
       $params = array(
           'amount' => 1000,
           'currency' => 'brl',
@@ -22,13 +26,6 @@
     }
 
     function test_capture_charge() {
-      $api_keys = 'pk_test_0208ca9d84d92a:sk_test_62a57820440d47';
-      $params = array('number' => 4242424242424242,
-                      'exp_month' => 11,
-                      'exp_year' => 2017,
-                      'name' => 'Arthur Granado');
-      $token = \Navaska\Token::create($params, $api_keys);
-
       $params = array(
           'amount' => 1000,
           'currency' => 'brl',
@@ -43,13 +40,6 @@
     }
 
     function test_refund_charge() {
-      $api_keys = 'pk_test_0208ca9d84d92a:sk_test_62a57820440d47';
-      $params = array('number' => 4242424242424242,
-                      'exp_month' => 11,
-                      'exp_year' => 2017,
-                      'name' => 'Arthur Granado');
-      $token = \Navaska\Token::create($params, $api_keys);
-
       $params = array(
           'amount' => 1000,
           'currency' => 'brl',
