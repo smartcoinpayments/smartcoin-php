@@ -7,7 +7,7 @@
     public static function create($params=null, $api_keys) {
       $url = self::get_request_url();
       $r = \Navaska\APIRequest::request('post',$url, $api_keys, $params);
-      return new Charge(json_decode($r[0]),true);
+      return new Charge(json_decode($r[0],true), $api_keys);
     }
 
     public static function retrieve($id=null, $api_keys) {
@@ -16,7 +16,15 @@
 
       $url = self::get_request_url();
       $r = \Navaska\APIRequest::request('get',$url.$id, $api_keys);
-      return new Charge(json_decode($r[0]),true);
+      return new Charge(json_decode($r[0],true), $api_keys);
     }
+
+    public function capture($params=null) {
+      $url = self::get_request_url() . $this->id . '/capture';
+      $r = \Navaska\APIRequest::request('post',$url, $this->api_keys, $params);
+      $c_arry = json_decode($r[0],true);
+      $this->captured = $c_arry['captured'];
+    }
+
   }
 ?>
