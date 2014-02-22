@@ -2,15 +2,21 @@
   namespace Navaska;
 
   class Object implements \ArrayAccess {
+
+    protected $api_keys;
     protected $_values;
 
-    public function __construct($params=null) {
+    public function __construct($params=null, $api_keys=null) {
       $this->_values = array();
 
       if($params) {
         foreach($params as $key => $value) {
           $this->_values[$key] = $value;
         }
+      }
+
+      if($api_keys) {
+        $this->api_keys = $api_keys;
       }
     }
 
