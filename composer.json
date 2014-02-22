@@ -1,5 +1,6 @@
 {
     "name": "navaska/navaska-php",
+    "version": "0.0.1",
     "description": "Navaska PHP library",
     "license": "MIT",
     "authors": [
@@ -9,7 +10,9 @@
         }
     ],
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "ext-curl": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "simpletest/simpletest": "1.1.*"
