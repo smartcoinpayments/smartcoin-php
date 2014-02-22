@@ -9,7 +9,7 @@
     public static function create($params=null, $api_keys) {
       $url = self::get_request_url();
       $r = \Navaska\APIRequest::request('post',$url, $api_keys, $params);
-      return new Token(json_decode($r[0]),true);
+      return new Token(json_decode($r[0],true), $api_keys);
     }
 
     public static function retrieve($id=null, $api_keys) {
@@ -18,7 +18,7 @@
 
       $url = self::get_request_url();
       $r = \Navaska\APIRequest::request('get',$url.$id, $api_keys);
-      return new Token(json_decode($r[0]),true);
+      return new Token(json_decode($r[0],true), $api_keys);
     }
   }
 ?>
