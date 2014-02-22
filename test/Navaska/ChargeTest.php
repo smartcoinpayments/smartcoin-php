@@ -63,5 +63,16 @@
       $this->assertEqual($c->amount,$c->refunds[0]->amount);
     }
 
+    function test_list_all() {
+      $api_keys = 'pk_test_0208ca9d84d92a:sk_test_62a57820440d47';
+      $params = array(
+          'count' => 3
+        );
+
+      $l = Charge::list_all($params, $api_keys);
+      $this->assertEqual($l->object,'list');
+      $this->assertEqual(count($l->data),3);
+    }
+
   }
 ?>

@@ -19,6 +19,12 @@
       return new Charge(json_decode($r[0],true), $api_keys);
     }
 
+    public static function list_all($params=null, $api_keys) {
+      $url = self::get_request_url();
+      $r = \Navaska\APIRequest::request('get',$url, $api_keys, $params);
+     return new \Navaska\Object_List(json_decode($r[0],true), $api_keys);
+    }
+
     public function capture($params=null) {
       $url = self::get_request_url() . $this->id . '/capture';
       $r = \Navaska\APIRequest::request('post',$url, $this->api_keys, $params);
