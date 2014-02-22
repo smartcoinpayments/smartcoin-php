@@ -26,5 +26,11 @@
       $this->captured = $c_arry['captured'];
     }
 
+    public function refund($params=null) {
+      $url = self::get_request_url() . $this->id . '/refund';
+      $r = \Navaska\APIRequest::request('post',$url, $this->api_keys, $params);
+      $c_arry = json_decode($r[0],true);
+      $this->refunded = $c_arry['refunded'];
+    }
   }
 ?>

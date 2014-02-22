@@ -41,5 +41,26 @@
       $c->capture();
       $this->assertTrue($c->captured);
     }
+
+    function test_refund_charge() {
+      $api_keys = 'pk_test_0208ca9d84d92a:sk_test_62a57820440d47';
+      $params = array('number' => 4242424242424242,
+                      'exp_month' => 11,
+                      'exp_year' => 2017,
+                      'name' => 'Arthur Granado');
+      $token = \Navaska\Token::create($params, $api_keys);
+
+      $params = array(
+          'amount' => 1000,
+          'currency' => 'brl',
+          'card' => $token->id
+        );
+
+      $c = Charge::create($params, $api_keys);
+      $this->assertFalse($c->refunded);
+      $c->refund();
+      $this->assertTrue($c->refunded);
+    }
+
   }
 ?>
