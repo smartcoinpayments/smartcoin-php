@@ -22,15 +22,13 @@
     public function capture($params=null) {
       $url = self::get_request_url() . $this->id . '/capture';
       $r = \Navaska\APIRequest::request('post',$url, $this->api_keys, $params);
-      $c_arry = json_decode($r[0],true);
-      $this->captured = $c_arry['captured'];
+      $this->reflesh_object(json_decode($r[0],true),$this->api_keys);
     }
 
     public function refund($params=null) {
       $url = self::get_request_url() . $this->id . '/refund';
       $r = \Navaska\APIRequest::request('post',$url, $this->api_keys, $params);
-      $c_arry = json_decode($r[0],true);
-      $this->refunded = $c_arry['refunded'];
+      $this->reflesh_object(json_decode($r[0],true),$this->api_keys);
     }
   }
 ?>

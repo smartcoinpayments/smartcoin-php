@@ -5,7 +5,8 @@
     protected static $types = array(
         'token'   => 'Token',
         'card'    => 'Card',
-        'charge'  => 'Charge'
+        'charge'  => 'Charge',
+        'refund'  => 'Refund'
       );
 
     protected $api_keys;
@@ -14,6 +15,14 @@
     public function __construct($params=null, $api_keys=null) {
       $this->_values = array();
 
+      $this->reflesh_object($params,$api_keys);
+
+      if($api_keys) {
+        $this->api_keys = $api_keys;
+      }
+    }
+
+    public function reflesh_object($params=null,$api_keys=null) {
       if($params) {
         foreach($params as $key => $value) {
           if(is_array($value) && array_key_exists('object',$value)) {
@@ -21,13 +30,19 @@
             $this->_values[$key] = new $klass($value, $api_keys);
           }
           else {
-            $this->_values[$key] = $value;
+            if(is_array($value)) {
+              $list = array();
+              foreach ($value as $array) {
+                $klass = self::$types[$array['object']];
+                $list[] = new $klass($array, $api_keys);
+              }
+              $this->_values[$key] = $list;
+            }
+            else {
+              $this->_values[$key] = $value;
+            }
           }
         }
-      }
-
-      if($api_keys) {
-        $this->api_keys = $api_keys;
       }
     }
 

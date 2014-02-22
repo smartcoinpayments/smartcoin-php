@@ -60,6 +60,7 @@
       $this->assertFalse($c->refunded);
       $c->refund();
       $this->assertTrue($c->refunded);
+      $this->assertEqual($c->amount,$c->refunds[0]->amount);
     }
 
   }
