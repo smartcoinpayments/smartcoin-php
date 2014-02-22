@@ -50,7 +50,7 @@
       if($method == 'get') {
         if($params != NULL){
           $encoded_params = self::encode($params);
-          $url = "$$url?$$encoded_params";
+          $url = "${url}?${encoded_params}";
         }
         $opts[CURLOPT_HTTPGET] = 1;
       }
