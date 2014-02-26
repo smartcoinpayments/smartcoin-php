@@ -6,5 +6,6 @@
   require(dirname(__FILE__) . '/Navaska/Refund.php');
   require(dirname(__FILE__) . '/Navaska/Charge.php');
   require(dirname(__FILE__) . '/Navaska/Object_List.php');
+  require(dirname(__FILE__) . '/Navaska/Error.php');
 
 ?>

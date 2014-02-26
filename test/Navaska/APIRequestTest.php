@@ -11,5 +11,6 @@
       $enc = \Navaska\APIRequest::encode($params);
       $this->assertEqual($enc,'foo=a&what%5Bbar%5D=lorin&what%5Bfoz%5D=1');
     }
+
   }
 ?>

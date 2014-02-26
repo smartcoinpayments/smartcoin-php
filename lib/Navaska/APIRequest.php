@@ -14,7 +14,31 @@
       if($api_keys == NULL)
         throw new InvalidArgumentException("APIRequest::request has to have api_keys");
 
-      return self::curl_request($method, $url, $api_keys, $params);
+      $response = self::curl_request($method, $url, $api_keys, $params);
+      $body = $response[0];
+      $code = $response[1];
+      if($code < 200 || $code >= 300){
+        self::handler_error($code, $body, $response);
+      }
+      return $response;
+    }
+
+    public static function handler_error($code, $body, $response){
+      switch ($code) {
+        case 400:
+        case 404:
+          $response = json_decode($response[0],true);
+          $error = $response['error'];
+          throw new \Navaska\RequestError($error['message'], $code, $body, $response);
+        case 401:
+          throw new \Navaska\AuthenticationError($response[0], $code, $body, $response);
+        case 402:
+          $response = json_decode($response[0],true);
+          $error = $response['error'];
+          throw new \Navaska\Error($error['message'], $code, $body, $response);
+        default:
+          throw new \Navaska\Error($error['message'], $code, $body, $response);
+      }
     }
 
     public static function encode($arr, $prefix=null) {
@@ -77,4 +101,5 @@
       return array($rbody, $rcode);
     }
   }
+
 ?>

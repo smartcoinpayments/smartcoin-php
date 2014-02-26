@@ -14,7 +14,9 @@ require_once(dirname(__FILE__) . '/../lib/Navaska.php');
 
 require_once(dirname(__FILE__) . '/Navaska/ObjectTest.php');
 require_once(dirname(__FILE__) . '/Navaska/APIRequestTest.php');
+require_once(dirname(__FILE__) . '/Navaska/APIRequestErrorTest.php');
 require_once(dirname(__FILE__) . '/Navaska/TokenTest.php');
 require_once(dirname(__FILE__) . '/Navaska/ChargeTest.php');
+require_once(dirname(__FILE__) . '/Navaska/ErrorTest.php');
 
 ?>
