@@ -29,4 +29,14 @@
   class RequestError extends Error {
 
   }
+
+  class InvalidArgumentException extends \Exception {
+    public function __construct($message=null) {
+      $this->message = $message;
+    }
+
+    public function message() {
+      return $this->message;
+    }
+  }
 ?>

@@ -12,7 +12,7 @@
         throw new InvalidArgumentException("APIRequest::request has to have url");
 
       if($api_keys == NULL)
-        throw new InvalidArgumentException("APIRequest::request has to have api_keys");
+        throw new InvalidArgumentException("No API Keys");
 
       $response = self::curl_request($method, $url, $api_keys, $params);
       $body = $response[0];
@@ -24,20 +24,19 @@
     }
 
     public static function handler_error($code, $body, $response){
+      $json = json_decode($response[0],true);
       switch ($code) {
         case 400:
         case 404:
-          $response = json_decode($response[0],true);
-          $error = $response['error'];
-          throw new \Navaska\RequestError($error['message'], $code, $body, $response);
+          $error = $json['error'];
+          throw new \Navaska\RequestError($error['message'], $code, $body, $json);
         case 401:
-          throw new \Navaska\AuthenticationError($response[0], $code, $body, $response);
+          throw new \Navaska\AuthenticationError($response[0], $code, $body, $json);
         case 402:
-          $response = json_decode($response[0],true);
           $error = $response['error'];
-          throw new \Navaska\Error($error['message'], $code, $body, $response);
+          throw new \Navaska\Error($error['message'], $code, $body, $json);
         default:
-          throw new \Navaska\Error($error['message'], $code, $body, $response);
+          throw new \Navaska\Error($response[0], $code, $body, $json);
       }
     }
 
