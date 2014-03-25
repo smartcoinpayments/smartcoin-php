@@ -1,12 +1,12 @@
 {
-    "name": "navaska/navaska-php",
+    "name": "smart_coin/smartcoin-php",
     "version": "0.0.1",
     "description": "Navaska PHP library",
     "license": "MIT",
     "authors": [
         {
             "name": "agranado",
-            "email": "agranado@navaska.com"
+            "email": "agranado@smartcoin.com.br"
         }
     ],
     "require": {

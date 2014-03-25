@@ -1,14 +1,14 @@
 <?php
-  class Test_Navaska_Charge extends UnitTestCase {
+  class Test_SmartCoin_Charge extends UnitTestCase {
 
     function test_create_and_retrieve_charge() {
-      $api_key = 'pk_test_d1331efc0f6fde:'
+      $api_key = 'pk_test_d1331efc0f6fde:';
       $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'name' => 'Arthur Granado');
-      $token = \Navaska\Token::create($params, $api_key);
+      $token = \SmartCoin\Token::create($params, $api_key);
 
       $params = array(
           'amount' => 1000,
@@ -23,13 +23,13 @@
     }
 
     function test_capture_charge() {
-      $api_key = 'pk_test_d1331efc0f6fde:'
+      $api_key = 'pk_test_d1331efc0f6fde:';
       $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'name' => 'Arthur Granado');
-      $token = \Navaska\Token::create($params, $api_keys);
+      $token = \SmartCoin\Token::create($params, $api_keys);
 
       $params = array(
           'amount' => 1000,
@@ -45,13 +45,13 @@
     }
 
     function test_refund_charge() {
-      $api_key = 'pk_test_d1331efc0f6fde:'
+      $api_key = 'pk_test_d1331efc0f6fde:';
       $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'name' => 'Arthur Granado');
-      $token = \Navaska\Token::create($params, $api_key);
+      $token = \SmartCoin\Token::create($params, $api_key);
 
       $params = array(
           'amount' => 1000,
@@ -67,13 +67,12 @@
     }
 
     function test_list_all() {
-      $api_key = 'pk_test_d1331efc0f6fde:'
       $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
       $params = array(
           'count' => 3
         );
 
-      $l = Charge::list_all($params, $api_key);
+      $l = Charge::list_all($params, $api_keys);
       $this->assertEqual($l->object,'list');
       $this->assertEqual(count($l->data),3);
     }

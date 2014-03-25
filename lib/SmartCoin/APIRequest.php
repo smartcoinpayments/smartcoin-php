@@ -1,5 +1,5 @@
 <?php
-  namespace Navaska;
+  namespace SmartCoin;
 
   class APIRequest {
     public static $api_base = 'https://devdotapi.smartcoin.com.br';
@@ -29,14 +29,14 @@
         case 400:
         case 404:
           $error = $json['error'];
-          throw new \Navaska\RequestError($error['message'], $code, $body, $json);
+          throw new \SmartCoin\RequestError($error['message'], $code, $body, $json);
         case 401:
-          throw new \Navaska\AuthenticationError($response[0], $code, $body, $json);
+          throw new \SmartCoin\AuthenticationError($response[0], $code, $body, $json);
         case 402:
           $error = $response['error'];
-          throw new \Navaska\Error($error['message'], $code, $body, $json);
+          throw new \SmartCoin\Error($error['message'], $code, $body, $json);
         default:
-          throw new \Navaska\Error($response[0], $code, $body, $json);
+          throw new \SmartCoin\Error($response[0], $code, $body, $json);
       }
     }
 

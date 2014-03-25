@@ -1,5 +1,5 @@
 <?php
-  namespace Navaska;
+  namespace SmartCoin;
 
   class Object implements \ArrayAccess {
     protected static $types = array(
