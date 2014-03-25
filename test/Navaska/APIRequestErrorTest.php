@@ -2,9 +2,9 @@
     class Test_Navaska_APIRequestError extends UnitTestCase {
       function test_api_authentication_error() {
         try {
-          Charge::create(array(), 'wrong_api_keys');
-        }catch(\Navaska\AuthenticationError $e) {
-          $this->assertEqual($e->get_http_status(),401);
+          Charge::create(array(), 'wrong_api_keys:');
+        }catch(\Navaska\RequestError $e) {
+          $this->assertEqual($e->get_http_status(),400);
         }
       }
 

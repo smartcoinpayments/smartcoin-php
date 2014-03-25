@@ -2,7 +2,7 @@
   namespace Navaska;
 
   class APIRequest {
-    public static $api_base = 'http://localhost:3000';
+    public static $api_base = 'https://devdotapi.smartcoin.com.br';
 
     public static function request($method=null, $url=null, $api_keys=null, $params=null){
       if($method == NULL)
