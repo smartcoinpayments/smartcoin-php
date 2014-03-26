@@ -19,6 +19,7 @@
       $c = Charge::create($params, $api_keys);
       $r = Charge::retrieve($c->id, $api_keys);
       $this->assertEqual($c->id,$r->id);
+      $this->assertEqual($c->card->type,'Visa');
       $this->assertEqual($c->card->id,$token->card->id);
     }
 
