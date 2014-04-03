@@ -7,6 +7,7 @@
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
+                      'cvc' => 111,
                       'name' => 'Arthur Granado');
       $token = \SmartCoin\Token::create($params, $api_key);
 
@@ -29,6 +30,7 @@
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
+                      'cvc' => 111,
                       'name' => 'Arthur Granado');
       $token = \SmartCoin\Token::create($params, $api_keys);
 
@@ -51,6 +53,7 @@
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
+                      'cvc' => 111,
                       'name' => 'Arthur Granado');
       $token = \SmartCoin\Token::create($params, $api_key);
 
