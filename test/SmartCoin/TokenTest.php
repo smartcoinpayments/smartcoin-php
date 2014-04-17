@@ -2,8 +2,8 @@
   class Test_SmartCoin_Token extends UnitTestCase {
 
     function test_create_and_retrieve_to_validate() {
-      $api_key = 'pk_test_d1331efc0f6fde:';
-      $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
+      $api_key = 'pk_test_31242ce3126aaf:';
+      $api_keys = 'pk_test_31242ce3126aaf:sk_test_96e251e1b27da3';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,

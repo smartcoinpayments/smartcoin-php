@@ -2,8 +2,8 @@
   class Test_SmartCoin_Charge extends UnitTestCase {
 
     function test_create_and_retrieve_charge() {
-      $api_key = 'pk_test_d1331efc0f6fde:';
-      $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
+      $api_key = 'pk_test_31242ce3126aaf:';
+      $api_keys = 'pk_test_31242ce3126aaf:sk_test_96e251e1b27da3';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
@@ -25,8 +25,8 @@
     }
 
     function test_capture_charge() {
-      $api_key = 'pk_test_d1331efc0f6fde:';
-      $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
+      $api_key = 'pk_test_31242ce3126aaf:';
+      $api_keys = 'pk_test_31242ce3126aaf:sk_test_96e251e1b27da3';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
@@ -48,8 +48,8 @@
     }
 
     function test_refund_charge() {
-      $api_key = 'pk_test_d1331efc0f6fde:';
-      $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
+      $api_key = 'pk_test_31242ce3126aaf:';
+      $api_keys = 'pk_test_31242ce3126aaf:sk_test_96e251e1b27da3';
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
@@ -71,7 +71,7 @@
     }
 
     function test_list_all() {
-      $api_keys = 'pk_test_d1331efc0f6fde:sk_test_c1a09efd8eaa36';
+      $api_keys = 'pk_test_31242ce3126aaf:sk_test_96e251e1b27da3';
       $params = array(
           'count' => 3
         );
