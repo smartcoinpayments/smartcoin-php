@@ -17,7 +17,7 @@
       }
 
       function test_api_request_error() {
-        $api_keys = 'pk_test_31242ce3126aaf:sk_test_96e251e1b27da3';
+        $api_keys = 'pk_test_3ac0794848c339:sk_test_8bec997b7a0ea1';
         try {
           Charge::create(array(), $api_keys);
         }catch(\SmartCoin\RequestError $e) {
