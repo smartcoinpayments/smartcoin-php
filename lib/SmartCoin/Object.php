@@ -2,12 +2,6 @@
   namespace SmartCoin;
 
   class Object implements \ArrayAccess {
-    protected static $types = array(
-        'token'   => 'Token',
-        'card'    => 'Card',
-        'charge'  => 'Charge',
-        'refund'  => 'Refund'
-      );
 
     protected $api_keys;
     protected $_values;
@@ -26,14 +20,14 @@
       if($params) {
         foreach($params as $key => $value) {
           if(is_array($value) && array_key_exists('object',$value)) {
-            $klass = self::$types[$value['object']];
+            $klass = Util::get_smart_coin_object($value['object']);
             $this->_values[$key] = new $klass($value, $api_keys);
           }
           else {
             if(is_array($value)) {
               $list = array();
               foreach ($value as $array) {
-                $klass = self::$types[$array['object']];
+                $klass = Util::get_smart_coin_object($array['object']);
                 $list[] = new $klass($array, $api_keys);
               }
               $this->_values[$key] = $list;

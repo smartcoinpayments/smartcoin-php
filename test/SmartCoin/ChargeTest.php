@@ -22,6 +22,8 @@
       $this->assertEqual($c->id,$r->id);
       $this->assertEqual($c->card->type,'Visa');
       $this->assertEqual($c->card->id,$token->card->id);
+      $this->assertNotNull($c->fees);
+      $this->assertEqual($c->fees[0]->type,'SmartCoin fee: flat');
     }
 
     function test_capture_charge() {
