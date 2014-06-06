@@ -2,13 +2,6 @@
   namespace SmartCoin;
 
   class Object implements \ArrayAccess {
-    protected static $types = array(
-        'token'   => 'Token',
-        'card'    => 'Card',
-        'charge'  => 'Charge',
-        'refund'  => 'Refund'
-      );
-
     protected $api_keys;
     protected $_values;
 
@@ -26,14 +19,14 @@
       if($params) {
         foreach($params as $key => $value) {
           if(is_array($value) && array_key_exists('object',$value)) {
-            $klass = self::$types[$value['object']];
+            $klass = self::get_object_by_type($value['object']);
             $this->_values[$key] = new $klass($value, $api_keys);
           }
           else {
             if(is_array($value)) {
               $list = array();
               foreach ($value as $array) {
-                $klass = self::$types[$array['object']];
+                $klass = self::get_object_by_type($array['object']);
                 $list[] = new $klass($array, $api_keys);
               }
               $this->_values[$key] = $list;
@@ -44,6 +37,25 @@
           }
         }
       }
+    }
+
+    public static function get_object_by_type($type) {
+      $object_type = "SmartCoin_Object";
+      switch ($type) {
+        case 'token':
+            $object_type = 'Token';
+            break;
+        case 'card':
+            $object_type = 'Card';
+            break;
+        case 'charge':
+            $object_type = 'Charge';
+            break;
+        case 'refund':
+            $object_type = 'Refund';
+            break;
+      }
+      return $object_type;
     }
 
     // Standard accessor magic methods
