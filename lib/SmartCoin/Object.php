@@ -54,6 +54,12 @@
         case 'refund':
             $object_type = 'Refund';
             break;
+        case 'fee':
+            $object_type = 'Fee';
+            break;
+        case 'installment':
+            $object_type = 'Installment';
+            break;
       }
       return $object_type;
     }
