@@ -64,6 +64,35 @@
       return $object_type;
     }
 
+    public function to_string(){
+      return $this->to_json();
+    }
+    
+    public function to_json(){
+      return json_encode($this->to_array());
+    }
+
+    //wrap method to get the Object values array not formatted
+    public function to_array(){
+      $results = array();
+
+      foreach ($this->_values as $k => $v) {
+        if($v instanceof Object){
+          $results[$k] = $v->to_array();
+        }else if(is_array($v)){
+          $results_2 = array();
+          foreach ($v as $v2) {
+            $results_2[] = $v2->to_array();
+          }
+          $results[$k] = $results_2;
+        }else{
+          $results[$k] = $v;
+        }
+      }
+
+      return $results;
+    }
+
     // Standard accessor magic methods
     public function __set($k, $v) {
       if ($v === ""){
