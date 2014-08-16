@@ -49,6 +49,8 @@
     }
 
     public function test_to_array_with_complex_object(){
+      SmartCoin::api_key('pk_test_3ac0794848c339');
+      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
       $api_key = 'pk_test_3ac0794848c339:';
       $api_keys = 'pk_test_3ac0794848c339:sk_test_8bec997b7a0ea1';
       $params = array('number' => 4242424242424242,
@@ -56,7 +58,7 @@
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $token = \SmartCoin\Token::create($params, $api_key);
+      $token = \SmartCoin\Token::create($params);
 
       $params = array(
           'amount' => 1000,

@@ -12,6 +12,7 @@ if(!$has_dependency){
 require_once(dirname(__FILE__) . '/../lib/SmartCoin.php');
 
 
+require_once(dirname(__FILE__) . '/SmartCoin/SmartCoinTest.php');
 require_once(dirname(__FILE__) . '/SmartCoin/ObjectTest.php');
 require_once(dirname(__FILE__) . '/SmartCoin/APIRequestTest.php');
 require_once(dirname(__FILE__) . '/SmartCoin/APIRequestErrorTest.php');

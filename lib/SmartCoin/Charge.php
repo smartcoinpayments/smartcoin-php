@@ -4,25 +4,25 @@
       return "/v1/charges/";
     }
 
-    public static function create($params=null, $api_keys) {
+    public static function create($params=null) {
       $url = self::get_request_url();
-      $r = \SmartCoin\APIRequest::request('post',$url, $api_keys, $params);
-      return new Charge(json_decode($r[0],true), $api_keys);
+      $r = \SmartCoin\APIRequest::request('post',$url, \SmartCoin::access_keys(), $params);
+      return new Charge(json_decode($r[0],true), \SmartCoin::access_keys());
     }
 
-    public static function retrieve($id=null, $api_keys) {
+    public static function retrieve($id=null) {
       if($id==null)
         throw new InvalidArgumentException("Charge::retrieve has to have id");
 
       $url = self::get_request_url();
-      $r = \SmartCoin\APIRequest::request('get',$url.$id, $api_keys);
-      return new Charge(json_decode($r[0],true), $api_keys);
+      $r = \SmartCoin\APIRequest::request('get',$url.$id, \SmartCoin::access_keys());
+      return new Charge(json_decode($r[0],true), \SmartCoin::access_keys());
     }
 
-    public static function list_all($params=null, $api_keys) {
+    public static function list_all($params=null) {
       $url = self::get_request_url();
-      $r = \SmartCoin\APIRequest::request('get',$url, $api_keys, $params);
-     return new \SmartCoin\Object_List(json_decode($r[0],true), $api_keys);
+      $r = \SmartCoin\APIRequest::request('get',$url, \SmartCoin::access_keys(), $params);
+     return new \SmartCoin\Object_List(json_decode($r[0],true), \SmartCoin::access_keys());
     }
 
     public function capture($params=null) {
