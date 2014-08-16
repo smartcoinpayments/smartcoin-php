@@ -1,7 +1,7 @@
 {
-    "name": "smart_coin/smartcoin-php",
+    "name": "smartcoin/smartcoin-php",
     "version": "0.1.7",
-    "description": "Navaska PHP library",
+    "description": "smartcoin php library",
     "license": "MIT",
     "authors": [
         {
