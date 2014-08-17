@@ -19,5 +19,6 @@ require_once(dirname(__FILE__) . '/SmartCoin/APIRequestErrorTest.php');
 require_once(dirname(__FILE__) . '/SmartCoin/TokenTest.php');
 require_once(dirname(__FILE__) . '/SmartCoin/ChargeTest.php');
 require_once(dirname(__FILE__) . '/SmartCoin/ErrorTest.php');
+require_once(dirname(__FILE__) . '/SmartCoin/ShippingTest.php');
 
 ?>

@@ -11,6 +11,7 @@
   require(dirname(__FILE__) . '/SmartCoin/Object_List.php');
   require(dirname(__FILE__) . '/SmartCoin/Error.php');
   require(dirname(__FILE__) . '/SmartCoin/Util.php');
+  require(dirname(__FILE__) . '/SmartCoin/Shipping.php');
 
 class SmartCoin {
   static $api_key = '';
