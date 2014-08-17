@@ -29,6 +29,22 @@
       $this->assertIsA($c->installments[0],'Installment');
     }
 
+    function test_create_bank_slip_charge_types() {
+      SmartCoin::api_key('pk_test_3ac0794848c339');
+      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      
+      $params = array(
+          'amount' => 1000,
+          'currency' => 'brl',
+          'type' => 'bank_slip'
+        );
+
+      $c = Charge::create($params);
+      $r = Charge::retrieve($c->id);
+      $this->assertNull($c->card);
+      $this->assertNotNull($c->bank_slip);
+    }
+
     function test_capture_charge() {
       SmartCoin::api_key('pk_test_3ac0794848c339');
       SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
