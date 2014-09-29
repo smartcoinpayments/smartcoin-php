@@ -25,7 +25,7 @@
       $this->assertEqual($c->card->id,$token->card->id);
       $this->assertNotNull($c->fees);
       $this->assertIsA($c->fees[0],'Fee');
-      $this->assertEqual($c->fees[0]->type,'SmartCoin fee: flat');
+      $this->assertEqual($c->fees[0]->type,'Smartcoin fee: flat');
       $this->assertIsA($c->installments[0],'Installment');
     }
 
