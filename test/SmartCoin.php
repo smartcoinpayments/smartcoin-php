@@ -1,6 +1,6 @@
 <?php
 
-echo "Running Smartcoin PHP test suit.\n";
+echo "Running Smartcoin PHP test suite.\n";
 
 $has_dependency = @include_once(dirname(__FILE__) . '/../vendor/simpletest/simpletest/autorun.php');
 
