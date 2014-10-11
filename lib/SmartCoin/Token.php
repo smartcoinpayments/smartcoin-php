@@ -1,5 +1,4 @@
 <?php
-  namespace Smartcoin;
 
   class Token extends \Smartcoin\Object {
     public static function get_request_url() {

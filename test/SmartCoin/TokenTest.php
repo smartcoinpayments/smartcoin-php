@@ -10,8 +10,8 @@
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $c = \Smartcoin\Token::create($params);
-      $r = \Smartcoin\Token::retrieve($c->id);
+      $c = Token::create($params);
+      $r = Token::retrieve($c->id);
       $this->assertEqual($c->id,$r->id);
     }
 

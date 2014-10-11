@@ -58,7 +58,7 @@
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $token = \Smartcoin\Token::create($params);
+      $token = Token::create($params);
 
       $params = array(
           'amount' => 1000,
