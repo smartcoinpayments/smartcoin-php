@@ -1,20 +1,23 @@
 {
-    "name": "smartcoin/smartcoin-php",
-    "version": "0.1.8",
-    "description": "smartcoin php library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "agranado",
-            "email": "agranado@smartcoin.com.br"
-        }
-    ],
-    "require": {
-        "php": ">=5.3",
-        "ext-curl": "*",
-        "ext-json": "*"
-    },
-    "require-dev": {
-        "simpletest/simpletest": "1.1.*"
+  "name": "smartcoin/smartcoin-php",
+  "version": "0.1.8",
+  "description": "smartcoin php library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "agranado",
+      "email": "agranado@smartcoin.com.br"
     }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "simpletest/simpletest": "1.1.*"
+  },
+  "autoload": {
+    "classmap": ["lib/"]
+  }
 }
