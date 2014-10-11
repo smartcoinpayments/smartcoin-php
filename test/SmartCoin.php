@@ -1,6 +1,6 @@
 <?php
 
-echo "Running SmartCoin PHP test suit.\n";
+echo "Running Smartcoin PHP test suit.\n";
 
 $has_dependency = @include_once(dirname(__FILE__) . '/../vendor/simpletest/simpletest/autorun.php');
 
@@ -9,16 +9,16 @@ if(!$has_dependency){
   exit(1);
 }
 
-require_once(dirname(__FILE__) . '/../lib/SmartCoin.php');
+require_once(dirname(__FILE__) . '/../lib/Smartcoin.php');
 
 
-require_once(dirname(__FILE__) . '/SmartCoin/SmartCoinTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/ObjectTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/APIRequestTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/APIRequestErrorTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/TokenTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/ChargeTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/ErrorTest.php');
-require_once(dirname(__FILE__) . '/SmartCoin/ShippingTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/SmartcoinTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/ObjectTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/APIRequestTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/APIRequestErrorTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/TokenTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/ChargeTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/ErrorTest.php');
+require_once(dirname(__FILE__) . '/Smartcoin/ShippingTest.php');
 
 ?>

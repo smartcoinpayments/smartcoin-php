@@ -1,16 +1,16 @@
 <?php
-  class Test_SmartCoin_Charge extends UnitTestCase {
+  class Test_Smartcoin_Charge extends UnitTestCase {
 
     function test_create_and_retrieve_charge() {
-      SmartCoin::api_key('pk_test_3ac0794848c339');
-      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $token = \SmartCoin\Token::create($params);
+      $token = \Smartcoin\Token::create($params);
 
       $params = array(
           'amount' => 1000,
@@ -30,8 +30,8 @@
     }
 
     function test_create_bank_slip_charge_types() {
-      SmartCoin::api_key('pk_test_3ac0794848c339');
-      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       
       $params = array(
           'amount' => 1000,
@@ -46,14 +46,14 @@
     }
 
     function test_capture_charge() {
-      SmartCoin::api_key('pk_test_3ac0794848c339');
-      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $token = \SmartCoin\Token::create($params);
+      $token = \Smartcoin\Token::create($params);
 
       $params = array(
           'amount' => 1000,
@@ -69,14 +69,14 @@
     }
 
     function test_refund_charge() {
-      SmartCoin::api_key('pk_test_3ac0794848c339');
-      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       $params = array('number' => 4242424242424242,
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $token = \SmartCoin\Token::create($params);
+      $token = \Smartcoin\Token::create($params);
 
       $params = array(
           'amount' => 1000,
@@ -92,8 +92,8 @@
     }
 
     function test_list_all() {
-      SmartCoin::api_key('pk_test_3ac0794848c339');
-      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       $params = array(
           'count' => 3
         );

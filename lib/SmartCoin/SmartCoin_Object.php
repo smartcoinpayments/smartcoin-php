@@ -1,4 +1,4 @@
 <?php
-  class SmartCoin_Object extends \SmartCoin\Object {
+  class Smartcoin_Object extends \Smartcoin\Object {
   }
 ?>

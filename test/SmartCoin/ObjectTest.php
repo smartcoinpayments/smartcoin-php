@@ -1,7 +1,7 @@
 <?php
-  class Test_SmartCoin_Object extends UnitTestCase {
+  class Test_Smartcoin_Object extends UnitTestCase {
     public function test_normal_accessors() {
-      $o = new \SmartCoin\Object();
+      $o = new \Smartcoin\Object();
       $o->foo = 'bar';
       $this->assertEqual($o->foo, 'bar');
       $this->assertTrue(isset($o->foo));
@@ -10,13 +10,13 @@
     }
 
     public function test_keys() {
-      $o = new \SmartCoin\Object();
+      $o = new \Smartcoin\Object();
       $o->foo = 'bar';
       $this->assertEqual($o->keys(), array('foo'));
     }
 
     public function test_array_accessors() {
-      $o = new \SmartCoin\Object();
+      $o = new \Smartcoin\Object();
       $o['foo'] = 'bar';
       $this->assertEqual($o['foo'], 'bar');
       $this->assertTrue(isset($o['foo']));
@@ -25,7 +25,7 @@
     }
 
     public function test_array_accessors_match_normal_accessors() {
-      $o = new \SmartCoin\Object();
+      $o = new \Smartcoin\Object();
       $o->foo = 'bar';
       $this->assertEqual($o['foo'], 'bar');
 
@@ -34,10 +34,10 @@
     }
 
     public function test_to_array(){
-      $o1 = new \SmartCoin\Object();
+      $o1 = new \Smartcoin\Object();
       $o1->foo = 'bar';
 
-      $o2 = new \SmartCoin\Object();
+      $o2 = new \Smartcoin\Object();
       $o2->foo_2 = 'bar_2';
 
       $o1->o2 = $o2;
@@ -49,8 +49,8 @@
     }
 
     public function test_to_array_with_complex_object(){
-      SmartCoin::api_key('pk_test_3ac0794848c339');
-      SmartCoin::api_secret('sk_test_8bec997b7a0ea1');
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       $api_key = 'pk_test_3ac0794848c339:';
       $api_keys = 'pk_test_3ac0794848c339:sk_test_8bec997b7a0ea1';
       $params = array('number' => 4242424242424242,
@@ -58,7 +58,7 @@
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Arthur Granado');
-      $token = \SmartCoin\Token::create($params);
+      $token = \Smartcoin\Token::create($params);
 
       $params = array(
           'amount' => 1000,
@@ -77,10 +77,10 @@
     }
 
     public function test_to_string(){
-      $o1 = new \SmartCoin\Object();
+      $o1 = new \Smartcoin\Object();
       $o1->foo = 'bar';
 
-      $o2 = new \SmartCoin\Object();
+      $o2 = new \Smartcoin\Object();
       $o2->foo_2 = 'bar_2';
 
       $o1->o2 = $o2;
@@ -90,10 +90,10 @@
     }
 
     public function test_to_json(){
-      $o1 = new \SmartCoin\Object();
+      $o1 = new \Smartcoin\Object();
       $o1->foo = 'bar';
 
-      $o2 = new \SmartCoin\Object();
+      $o2 = new \Smartcoin\Object();
       $o2->foo_2 = 'bar_2';
 
       $o1->o2 = $o2;
@@ -103,15 +103,15 @@
     }
 
     public function test_to_json_with_object_array(){
-      $o1 = new \SmartCoin\Object();
+      $o1 = new \Smartcoin\Object();
       $o1->foo = 'bar';
 
-      $o2 = new \SmartCoin\Object();
+      $o2 = new \Smartcoin\Object();
       $o2->foo_2 = 'bar_2';
 
-      $o3 = new \SmartCoin\Object();
+      $o3 = new \Smartcoin\Object();
       $o3->foo_3 = 'bar_3';
-      $o4 = new \SmartCoin\Object();
+      $o4 = new \Smartcoin\Object();
       $o4->foo_4 = 'bar_4';
       $a2 = array($o3,$o4);
 

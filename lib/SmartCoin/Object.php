@@ -1,5 +1,5 @@
 <?php
-  namespace SmartCoin;
+  namespace Smartcoin;
 
   class Object implements \ArrayAccess {
     protected $api_keys;
@@ -40,7 +40,7 @@
     }
 
     public static function get_object_by_type($type) {
-      $object_type = "SmartCoin_Object";
+      $object_type = "Smartcoin_Object";
       switch ($type) {
         case 'token':
             $object_type = 'Token';

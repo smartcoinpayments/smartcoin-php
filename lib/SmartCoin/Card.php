@@ -1,5 +1,5 @@
 <?php
-  class Card extends \SmartCoin\Object {
+  class Card extends \Smartcoin\Object {
 
   }
 ?>

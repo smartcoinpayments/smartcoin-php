@@ -1,19 +1,19 @@
 <?php
-  require(dirname(__FILE__) . '/SmartCoin/Object.php');
-  require(dirname(__FILE__) . '/SmartCoin/APIRequest.php');
-  require(dirname(__FILE__) . '/SmartCoin/SmartCoin_Object.php');
-  require(dirname(__FILE__) . '/SmartCoin/Token.php');
-  require(dirname(__FILE__) . '/SmartCoin/Card.php');
-  require(dirname(__FILE__) . '/SmartCoin/Refund.php');
-  require(dirname(__FILE__) . '/SmartCoin/Fee.php');
-  require(dirname(__FILE__) . '/SmartCoin/Installment.php');
-  require(dirname(__FILE__) . '/SmartCoin/Charge.php');
-  require(dirname(__FILE__) . '/SmartCoin/Object_List.php');
-  require(dirname(__FILE__) . '/SmartCoin/Error.php');
-  require(dirname(__FILE__) . '/SmartCoin/Util.php');
-  require(dirname(__FILE__) . '/SmartCoin/Shipping.php');
+  require(dirname(__FILE__) . '/Smartcoin/Object.php');
+  require(dirname(__FILE__) . '/Smartcoin/APIRequest.php');
+  require(dirname(__FILE__) . '/Smartcoin/Smartcoin_Object.php');
+  require(dirname(__FILE__) . '/Smartcoin/Token.php');
+  require(dirname(__FILE__) . '/Smartcoin/Card.php');
+  require(dirname(__FILE__) . '/Smartcoin/Refund.php');
+  require(dirname(__FILE__) . '/Smartcoin/Fee.php');
+  require(dirname(__FILE__) . '/Smartcoin/Installment.php');
+  require(dirname(__FILE__) . '/Smartcoin/Charge.php');
+  require(dirname(__FILE__) . '/Smartcoin/Object_List.php');
+  require(dirname(__FILE__) . '/Smartcoin/Error.php');
+  require(dirname(__FILE__) . '/Smartcoin/Util.php');
+  require(dirname(__FILE__) . '/Smartcoin/Shipping.php');
 
-class SmartCoin {
+class Smartcoin {
   static $api_key = '';
   static $api_secret = '';
 

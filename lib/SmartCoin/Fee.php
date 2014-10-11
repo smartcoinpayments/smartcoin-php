@@ -1,5 +1,5 @@
 <?php
-  class Fee extends \SmartCoin\Object {
+  class Fee extends \Smartcoin\Object {
 
   }
 ?>

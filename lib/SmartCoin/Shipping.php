@@ -1,8 +1,8 @@
 <?php
-	namespace SmartCoin;
+	namespace Smartcoin;
 
   class Shipping {
-  	static $shipping_url_base = 'https://shipping.smartcoin.com.br';
+  	static $shipping_url_base = 'https://shipping.Smartcoin.com.br';
   	public static function calculator($params) {
   		return json_decode(self::curl_request('get', '/shipping_calculator/', $params)[0], true);
   	}

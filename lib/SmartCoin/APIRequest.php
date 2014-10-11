@@ -1,8 +1,8 @@
 <?php
-  namespace SmartCoin;
+  namespace Smartcoin;
 
   class APIRequest {
-    public static $api_base = 'https://api.smartcoin.com.br';
+    public static $api_base = 'https://api.Smartcoin.com.br';
 
     public static function request($method=null, $url=null, $api_keys=null, $params=null){
       if($method == NULL)
@@ -29,14 +29,14 @@
         case 400:
         case 404:
           $error = $json['error'];
-          throw new \SmartCoin\RequestError($error['message'], $code, $body, $json);
+          throw new \Smartcoin\RequestError($error['message'], $code, $body, $json);
         case 401:
-          throw new \SmartCoin\AuthenticationError($response[0], $code, $body, $json);
+          throw new \Smartcoin\AuthenticationError($response[0], $code, $body, $json);
         case 402:
           $error = $response['error'];
-          throw new \SmartCoin\Error($error['message'], $code, $body, $json);
+          throw new \Smartcoin\Error($error['message'], $code, $body, $json);
         default:
-          throw new \SmartCoin\Error($response[0], $code, $body, $json);
+          throw new \Smartcoin\Error($response[0], $code, $body, $json);
       }
     }
 
