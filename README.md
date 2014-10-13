@@ -1,9 +1,11 @@
-Visit Smartcoin[https://smartcoin.com.br/] to request account.
+Visit [Smartcoin](https://smartcoin.com.br/) to request an account.
 
-== Getting Started
+Getting Started
+===============
 
-Simple usage:
+Sample usage:
 
+```php
 Smartcoin::api_key('pk_test_3ac0794848c339');
 Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
 //Credit Card Charge
@@ -27,13 +29,21 @@ $charge_params = array(
         );
 $charge = Charge::create($charge_params);
 echo $charge->to_json();
+```
 
-== Test
+Test
+====
 
-In order to test you have to install SimpleTest[https://packagist.org/packages/simpletest/simpletest] via Composer[https://getcomposer.org/]:
+In order to run the tests you have to install
+[SimpleTest](https://packagist.org/packages/simpletest/simpletest) via
+[Composer](https://getcomposer.org/):
 
+```
 composer update --dev
+```
 
-Run test suite:
+To run test the suite:
 
+```
 php ./test/Smartcoin.php
+```
