@@ -31,7 +31,8 @@ $charge = Charge::create($charge_params);
 echo $charge->to_json();
 ```
 
-== Test
+Test
+====
 
 In order to run the tests you have to install
 [SimpleTest](https://packagist.org/packages/simpletest/simpletest) via
