@@ -21,4 +21,3 @@
 			$this->assertEqual(Smartcoin::get_api_key(),'pk_test_1234q:');
 		}
 	}
-?>
