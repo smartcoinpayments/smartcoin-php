@@ -6,8 +6,8 @@ Vamos fazer
 Exemplo de uso:
 
 ```php
-Smartcoin::api_key('pk_test_3ac0794848c339');
-Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
+Smartcoin::api_key('pk_test_407d1f51a61756');
+Smartcoin::api_secret('sk_test_86e4486a0078b2');
 
 //Credit Card Charge
 $charge = Charge::create(array(
