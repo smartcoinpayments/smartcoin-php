@@ -29,6 +29,27 @@
       $this->assertIsA($c->installments[0],'Installment');
     }
 
+    function test_create_charge_with_card_params(){
+      Smartcoin::api_key('pk_test_3ac0794848c339');
+      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
+
+      $c = Charge::create(array(
+        "amount" => 100,
+        "currency" => "brl",
+        "card" => array(
+          "number" => "4242424242424242",
+          "exp_month" => 10,
+          "exp_year" => 15,
+          "cvc" => "083"
+        ),
+        "description" => "Smartcoin charge test for example@test.com"
+      ));
+
+      $this->assertEqual($c->amount,100);
+      $this->assertTrue($c->paid);
+      $this->assertEqual($c->card->type,'Visa');
+    }
+
     function test_create_bank_slip_charge_types() {
       Smartcoin::api_key('pk_test_3ac0794848c339');
       Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
