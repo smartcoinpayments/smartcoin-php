@@ -31,6 +31,7 @@ $charge = Charge::create(array(
 ));
 echo $charge->to_json();
 ```
+Veja os [testes](https://github.com/smartcoinpayments/smartcoin-php/blob/master/test/SmartCoin/ChargeTest.php) para mais exemplos.
 
 Teste
 =====

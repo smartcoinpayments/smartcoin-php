@@ -11,7 +11,7 @@
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
-                      'name' => 'Arthur Granado');
+                      'name' => 'Doctor Who');
       $c = Token::create($params); 
       $r = Token::retrieve($c->id);
       $this->assertEqual($c->id,$r->id);

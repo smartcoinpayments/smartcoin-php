@@ -9,7 +9,7 @@
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
-                      'name' => 'Arthur Granado');
+                      'name' => 'Doctor Who');
       $token = Token::create($params);
 
       $params = array(
@@ -73,7 +73,7 @@
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
-                      'name' => 'Arthur Granado');
+                      'name' => 'Doctor Who');
       $token = Token::create($params);
 
       $params = array(
@@ -96,7 +96,7 @@
                       'exp_month' => 11,
                       'exp_year' => 2017,
                       'cvc' => 111,
-                      'name' => 'Arthur Granado');
+                      'name' => 'Doctor Who');
       $token = Token::create($params);
 
       $params = array(
