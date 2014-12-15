@@ -1,4 +1,6 @@
 <?php
+  namespace Smartcoin;
+
   require(dirname(__FILE__) . '/Smartcoin/Object.php');
   require(dirname(__FILE__) . '/Smartcoin/APIRequest.php');
   require(dirname(__FILE__) . '/Smartcoin/Smartcoin_Object.php');
