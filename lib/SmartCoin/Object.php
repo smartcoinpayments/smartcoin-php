@@ -40,25 +40,25 @@
     }
 
     public static function get_object_by_type($type) {
-      $object_type = "Smartcoin_Object";
+      $object_type = "\Smartcoin\Smartcoin_Object";
       switch ($type) {
         case 'token':
-            $object_type = 'Token';
+            $object_type = '\Smartcoin\Token';
             break;
         case 'card':
-            $object_type = 'Card';
+            $object_type = '\Smartcoin\Card';
             break;
         case 'charge':
-            $object_type = 'Charge';
+            $object_type = '\Smartcoin\Charge';
             break;
         case 'refund':
-            $object_type = 'Refund';
+            $object_type = '\Smartcoin\Refund';
             break;
         case 'fee':
-            $object_type = 'Fee';
+            $object_type = '\Smartcoin\Fee';
             break;
         case 'installment':
-            $object_type = 'Installment';
+            $object_type = '\Smartcoin\Installment';
             break;
       }
       return $object_type;

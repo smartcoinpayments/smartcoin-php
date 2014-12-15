@@ -49,8 +49,8 @@
     }
 
     public function test_to_array_with_complex_object(){
-      Smartcoin::api_key('pk_test_3ac0794848c339');
-      Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
+      \Smartcoin\Smartcoin::api_key('pk_test_3ac0794848c339');
+      \Smartcoin\Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
       $api_key = 'pk_test_3ac0794848c339:';
       $api_keys = 'pk_test_3ac0794848c339:sk_test_8bec997b7a0ea1';
       $params = array('number' => 4242424242424242,
@@ -58,7 +58,7 @@
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Doctor Who');
-      $token = Token::create($params);
+      $token = \Smartcoin\Token::create($params);
 
       $params = array(
           'amount' => 1000,
@@ -66,7 +66,7 @@
           'card' => $token->id
         );
 
-      $c = Charge::create($params, $api_keys);
+      $c = \Smartcoin\Charge::create($params, $api_keys);
       $charge_array = $c->to_array();
 
       $this->assertEqual($charge_array['amount'],$c->amount);
