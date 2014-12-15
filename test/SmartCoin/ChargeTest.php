@@ -112,6 +112,29 @@
       $this->assertEqual($c->amount,$c->refunds[0]->amount);
     }
 
+    function test_update_charge(){
+      \Smartcoin\Smartcoin::api_key('pk_test_3ac0794848c339');
+      \Smartcoin\Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
+
+      $params = array(
+          'amount' => 1000,
+          'currency' => 'brl',
+          'card' => array(
+                  'number' => 4242424242424242,
+                  'exp_month' => 11,
+                  'exp_year' => 2017,
+                  'cvc' => 111,
+                  'name' => 'Doctor Who'
+                )
+        );
+
+      $c = \Smartcoin\Charge::create($params);
+      $c->description = "New description";
+      $c->save();
+      $this->assertEqual($c->description, "New description");
+      $this->assertEqual(\Smartcoin\Charge::retrieve($c->id)->description, "New description");
+    }
+
     function test_list_all() {
       \Smartcoin\Smartcoin::api_key('pk_test_3ac0794848c339');
       \Smartcoin\Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
