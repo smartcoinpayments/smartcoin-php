@@ -18,6 +18,8 @@
     "simpletest/simpletest": "1.1.*"
   },
   "autoload": {
-    "classmap": ["lib/"]
+    "psr-4": {
+      "Smartcoin\\": "lib/"
+    }
   }
 }
