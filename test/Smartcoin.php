@@ -2,21 +2,27 @@
 
 echo "Running Smartcoin PHP test suite.\n";
 
-$hasDependency = @include_once(dirname(__FILE__) . '/../vendor/simpletest/simpletest/autorun.php');
+$hasDependency = @include_once(__DIR__ . '/../vendor/simpletest/simpletest/autorun.php');
 
 if(!$hasDependency){
 	echo "Missing Dependency: SimpleTest wasn't loaded.";
   exit(1);
 }
 
-require_once(dirname(__FILE__) . '/../vendor/autoload.php');
+require_once(__DIR__ . '/../vendor/autoload.php');
 
+class AllTests extends TestSuite {
+    function AllTests() {
+        $this->TestSuite('All tests');
 
-require_once(dirname(__FILE__) . '/Smartcoin/SmartcoinTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/ObjectTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/APIRequestTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/APIRequestErrorTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/TokenTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/ChargeTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/ErrorTest.php');
-require_once(dirname(__FILE__) . '/Smartcoin/ShippingTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/SmartcoinTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/ObjectTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/APIRequestTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/APIRequestErrorTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/TokenTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/ChargeTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/ErrorTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/ShippingTest.php');
+    }
+}
+
