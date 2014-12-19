@@ -8,14 +8,14 @@
     public function __construct($params=null, $api_keys=null) {
       $this->_values = array();
 
-      $this->reflesh_object($params,$api_keys);
+      $this->refresh_object($params,$api_keys);
 
       if($api_keys) {
         $this->api_keys = $api_keys;
       }
     }
 
-    public function reflesh_object($params=null,$api_keys=null) {
+    public function refresh_object($params=null,$api_keys=null) {
       if($params) {
         foreach($params as $key => $value) {
           if(is_array($value) && array_key_exists('object',$value)) {
@@ -59,6 +59,9 @@
             break;
         case 'installment':
             $object_type = '\Smartcoin\Installment';
+            break;
+        case 'subscription':
+            $object_type = '\Smartcoin\Subscription';
             break;
       }
       return $object_type;

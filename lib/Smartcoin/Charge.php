@@ -30,20 +30,20 @@ namespace Smartcoin;
     public function capture($params=null) {
       $url = self::get_request_url() . $this->id . '/capture';
       $r = \Smartcoin\APIRequest::request('post',$url, $this->api_keys, $params);
-      $this->reflesh_object(json_decode($r[0],true),$this->api_keys);
+      $this->refresh_object(json_decode($r[0],true),$this->api_keys);
     }
 
     public function refund($params=null) {
       $url = self::get_request_url() . $this->id . '/refund';
       $r = \Smartcoin\APIRequest::request('post',$url, $this->api_keys, $params);
-      $this->reflesh_object(json_decode($r[0],true),$this->api_keys);
+      $this->refresh_object(json_decode($r[0],true),$this->api_keys);
     }
 
     public function save() {
       $params = array('description' => $this->description);
       $url = self::get_request_url() . $this->id;
       $r = \Smartcoin\APIRequest::request('post',$url, $this->api_keys, $params);
-      $this->reflesh_object(json_decode($r[0],true),$this->api_keys); 
+      $this->refresh_object(json_decode($r[0],true),$this->api_keys); 
     }
   }
 ?>
