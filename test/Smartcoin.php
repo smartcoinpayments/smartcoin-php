@@ -23,6 +23,7 @@ class AllTests extends TestSuite {
         $this->addFile(__DIR__ . '/Smartcoin/ChargeTest.php');
         $this->addFile(__DIR__ . '/Smartcoin/ErrorTest.php');
         $this->addFile(__DIR__ . '/Smartcoin/ShippingTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/CustomerTest.php');
+        $this->addFile(__DIR__ . '/Smartcoin/SubscriptionTest.php');
     }
 }
-
