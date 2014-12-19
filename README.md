@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lccro/smartcoin-php.svg)](https://travis-ci.org/lccro/smartcoin-php)
+[![Build Status](https://travis-ci.org/smartcoinpayments/smartcoin-php.svg?branch=master)](https://travis-ci.org/smartcoinpayments/smartcoin-php)
 
 Visit [Smartcoin](https://smartcoin.com.br/) to request an account.
 
