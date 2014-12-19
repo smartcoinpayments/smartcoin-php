@@ -2,14 +2,14 @@
 
 echo "Running Smartcoin PHP test suite.\n";
 
-$hasDependency = @include_once(__DIR__ . '/../vendor/simpletest/simpletest/autorun.php');
+$hasDependency = @include_once('vendor/simpletest/simpletest/autorun.php');
 
 if(!$hasDependency){
 	echo "Missing Dependency: SimpleTest wasn't loaded.";
   exit(1);
 }
 
-require_once(__DIR__ . '/../vendor/autoload.php');
+require_once('vendor/autoload.php');
 
 class AllTests extends TestSuite {
     function AllTests() {
