@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lccro/smartcoin-php.svg)](https://travis-ci.org/lccro/smartcoin-php)
+
 Visit [Smartcoin](https://smartcoin.com.br/) to request an account.
 
 Vamos fazer
