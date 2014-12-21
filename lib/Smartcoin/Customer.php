@@ -15,6 +15,12 @@ namespace Smartcoin;
   	public function subscriptions(){
   		return new \Smartcoin\Subscription($this->id);
   	}
+
+    public function update_card($params) {
+      $url = self::get_request_url();
+      $r = \Smartcoin\APIRequest::request('post',$url.$this->id, \Smartcoin\Smartcoin::access_keys(), $params);
+      return new Customer(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys()); 
+    }
   }
 
 ?>
