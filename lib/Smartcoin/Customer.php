@@ -19,7 +19,7 @@ namespace Smartcoin;
     public function update_card($params) {
       $url = self::get_request_url();
       $r = \Smartcoin\APIRequest::request('post',$url.$this->id, \Smartcoin\Smartcoin::access_keys(), $params);
-      return new Customer(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys()); 
+      $this->refresh_object(json_decode($r[0],true),$this->api_keys); 
     }
   }
 
