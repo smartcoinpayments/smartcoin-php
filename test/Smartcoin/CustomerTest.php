@@ -29,6 +29,7 @@
 
       $this->assertEqual($customerUpdated->id, $customer_id);
       $this->assertEqual($customerUpdated->cards["data"][0]->last4, "5454");
+      $this->assertEqual($customer->cards["data"][0]->last4, "5454");
     }
   }
 ?>
