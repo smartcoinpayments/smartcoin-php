@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/smartcoinpayments/smartcoin-php.svg?branch=master)](https://travis-ci.org/smartcoinpayments/smartcoin-php)
 
-Visit [Smartcoin](https://smartcoin.com.br/) to request an account.
+Crie sua conta na <a href="https://smartcoin.com.br/" target="_blank">Smartcoin</a>.
 
 Vamos fazer
 ===============
@@ -33,19 +33,18 @@ $charge = Charge::create(array(
 ));
 echo $charge->to_json();
 ```
-Veja os [testes](https://github.com/smartcoinpayments/smartcoin-php/blob/master/test/SmartCoin/ChargeTest.php) para mais exemplos.
+Veja os <a href="https://github.com/smartcoinpayments/smartcoin-php/blob/master/test/Smartcoin/ChargeTest.php" target="_blank">testes</a> para mais exemplos.
 
 Teste
 =====
 
-Para executar os teste da suite de teste, instale [SimpleTest](https://packagist.org/packages/simpletest/simpletest) via
-[Composer](https://getcomposer.org/):
+Para instalar a suite de teste, execute o <a href="https://packagist.org/packages/simpletest/simpletest" target="_blank">SimpleTest</a> via <a href="https://getcomposer.org/" target="_blank">Composer</a>:
 
 ```
 composer update --dev
 ```
 
-To run test the suite:
+Para executar o teste:
 
 ```
 php ./test/Smartcoin.php
