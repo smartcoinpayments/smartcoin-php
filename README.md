@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/smartcoinpayments/smartcoin-php.svg?branch=master)](https://travis-ci.org/smartcoinpayments/smartcoin-php)
+[![Latest Stable Version](https://poser.pugx.org/smartcoin/smartcoin-php/v/stable.svg)](https://packagist.org/packages/smartcoin/smartcoin-php)
+[![License](https://poser.pugx.org/smartcoin/smartcoin-php/license.svg)](https://packagist.org/packages/smartcoin/smartcoin-php)
 
 Crie sua conta na <a href="https://smartcoin.com.br/" target="_blank">Smartcoin</a>.
 
