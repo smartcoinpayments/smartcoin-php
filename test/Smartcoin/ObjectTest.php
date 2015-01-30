@@ -121,5 +121,14 @@
       $json = $o1->to_json();
       $this->assertEqual($json,'{"foo":"bar","o2":{"foo_2":"bar_2"},"a":[{"foo_3":"bar_3"},{"foo_4":"bar_4"}]}');
     }
+
+    public function test_to_serialize_parameters(){
+      $o = new \Smartcoin\Object();
+      $o->foo = 'bar';
+      $o->bar = 'foo';   
+      $params = $o->serializeParamenters();
+      $this->assertEqual($params['foo'], 'bar');
+      $this->assertEqual($params['bar'], 'foo');
+    }
   }
 ?>

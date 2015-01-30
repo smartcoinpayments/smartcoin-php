@@ -1,13 +1,26 @@
 <?php
   class Test_Smartcoin_Customer extends UnitTestCase {
+    function test_create_customer(){
+      \Smartcoin\Smartcoin::api_key('pk_test_3ac0794848c339');
+      \Smartcoin\Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
+
+      $params = array("email" => "test@test.com");
+      $cus = \Smartcoin\Customer::create($params);
+
+      $this->assertNotNull($cus->id);
+      $this->assertEqual($cus->email, $params['email']);
+    }
+
   	function test_retrieve_customer() {
   		\Smartcoin\Smartcoin::api_key('pk_test_3ac0794848c339');
       \Smartcoin\Smartcoin::api_secret('sk_test_8bec997b7a0ea1');
 
-      $customer_id = 'cus_4635424330874882485';
-      $c = \Smartcoin\Customer::retrieve($customer_id);
+      $params = array("email" => "test@test.com");
+      $cus = \Smartcoin\Customer::create($params);
+
+      $c = \Smartcoin\Customer::retrieve($cus->id);
       $this->assertIsA($c,'\Smartcoin\Customer');
-      $this->assertEqual($c->id, $customer_id);
+      $this->assertEqual($c->id, $cus->id);
   	}
 
     function test_update_customer_card_by_token() {
@@ -19,17 +32,28 @@
                       'exp_year' => 2017,
                       'cvc' => 111,
                       'name' => 'Doctor Who');
-      $token = \Smartcoin\Token::create($params);
+      $tok = \Smartcoin\Token::create($params);
 
-      $customer_id = 'cus_4635424330874882485';
-      $customer = \Smartcoin\Customer::retrieve($customer_id);
-      
-      $customer->update_card(array("card" => $token->id));
-      $customerUpdated = \Smartcoin\Customer::retrieve($customer_id);
+      $params = array("email" => "test@test.com");
+      $cus = \Smartcoin\Customer::create($params);
+      $cus->card = $tok->id;
+      $cus->save();
 
-      $this->assertEqual($customerUpdated->id, $customer_id);
-      $this->assertEqual($customerUpdated->cards["data"][0]->last4, "5454");
-      $this->assertEqual($customer->cards["data"][0]->last4, "5454");
+      $cusUpdated = \Smartcoin\Customer::retrieve($cus->id);
+
+      $this->assertEqual($cusUpdated->id, $cus->id);
+      $this->assertEqual($cusUpdated->cards["data"][0]->last4, "5454");
+      $this->assertEqual($cus->cards["data"][0]->last4, "5454");
     }
+
+    function test_delete_customer(){
+      $params = array("email" => "test@test.com");
+      $cus = \Smartcoin\Customer::create($params);
+
+      $cus_deleted = $cus->delete();
+      $this->assertEqual($cus_deleted['id'], $cus->id);
+      $this->assertTrue($cus_deleted['deleted']);
+    }
+
   }
 ?>
