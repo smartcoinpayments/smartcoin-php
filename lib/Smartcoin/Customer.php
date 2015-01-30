@@ -13,6 +13,9 @@ namespace Smartcoin;
     }
 
   	public static function retrieve($id=null) {
+      if (strpos($id,'@') !== false)
+        $id = '?email=' . $id;
+      
   		$url = self::get_request_url();
   		$r = \Smartcoin\APIRequest::request('get',$url.$id, \Smartcoin\Smartcoin::access_keys());
       return new Customer(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());
