@@ -2,7 +2,7 @@
   namespace Smartcoin;
 
   class APIRequest {
-    public static $api_base = 'https://api.Smartcoin.com.br';
+    public static $api_base = 'https://api.smartcoin.com.br';
 
     public static function request($method=null, $url=null, $api_keys=null, $params=null){
       if($method == NULL)
@@ -77,8 +77,15 @@
         }
         $opts[CURLOPT_HTTPGET] = 1;
       }
-      else{
+
+      
+      if($method == 'post'){
         $opts[CURLOPT_POST] = 1;
+        $opts[CURLOPT_POSTFIELDS] = self::encode($params);
+      }
+
+      if($method == 'delete'){
+        $opts[CURLOPT_CUSTOMREQUEST] = 'DELETE';
         $opts[CURLOPT_POSTFIELDS] = self::encode($params);
       }
 

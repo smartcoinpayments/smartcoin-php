@@ -4,9 +4,11 @@
   class Object implements \ArrayAccess {
     protected $api_keys;
     protected $_values;
+    protected $_unsavedValues;
 
     public function __construct($params=null, $api_keys=null) {
       $this->_values = array();
+      $this->_unsavedValues = array();
 
       $this->refresh_object($params,$api_keys);
 
@@ -33,6 +35,7 @@
             }
             else {
               $this->_values[$key] = $value;
+              unset($this->_unsavedValues[$key]);
             }
           }
         }
@@ -60,11 +63,28 @@
         case 'installment':
             $object_type = '\Smartcoin\Installment';
             break;
+        case 'customer':
+            $object_type = '\Smartcoin\Customer';
+            break;
+        case 'plan':
+            $object_type = '\Smartcoin\Plan';
+            break;
         case 'subscription':
             $object_type = '\Smartcoin\Subscription';
             break;
       }
       return $object_type;
+    }
+
+    public function serializeParamenters(){
+      $result = array();
+      foreach ($this->_unsavedValues as $k => $v) {
+        if($this->_unsavedValues[$k]) {
+          $result[$k] = $this->_values[$k];  
+        }
+        
+      }
+      return $result;
     }
 
     public function to_string(){
@@ -105,6 +125,7 @@
           .'You may set obj->'.$k.' = NULL to delete the property');
       }
       $this->_values[$k] = $v;
+      $this->_unsavedValues[$k] = true;
     }
 
     public function __isset($k) {
@@ -113,6 +134,7 @@
 
     public function __unset($k) {
       unset($this->_values[$k]);
+      unset($this->_unsavedValues[$k]);
     }
 
     public function __get($k) {
