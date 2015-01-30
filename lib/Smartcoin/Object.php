@@ -63,6 +63,12 @@
         case 'installment':
             $object_type = '\Smartcoin\Installment';
             break;
+        case 'customer':
+            $object_type = '\Smartcoin\Customer';
+            break;
+        case 'plan':
+            $object_type = '\Smartcoin\Plan';
+            break;
         case 'subscription':
             $object_type = '\Smartcoin\Subscription';
             break;

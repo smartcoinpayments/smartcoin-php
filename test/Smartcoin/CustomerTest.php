@@ -6,6 +6,7 @@
 
       $params = array("email" => "test@test.com");
       $cus = \Smartcoin\Customer::create($params);
+
       $this->assertNotNull($cus->id);
       $this->assertEqual($cus->email, $params['email']);
     }

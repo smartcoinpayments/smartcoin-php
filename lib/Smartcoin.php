@@ -15,6 +15,7 @@
   require(dirname(__FILE__) . '/Smartcoin/Util.php');
   require(dirname(__FILE__) . '/Smartcoin/Shipping.php');
   require(dirname(__FILE__) . '/Smartcoin/Customer.php');
+  require(dirname(__FILE__) . '/Smartcoin/Plan.php');
   require(dirname(__FILE__) . '/Smartcoin/Subscription.php');
 
 class Smartcoin {
