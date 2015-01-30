@@ -1,6 +1,6 @@
 {
   "name": "smartcoin/smartcoin-php",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "smartcoin php library",
   "license": "MIT",
   "authors": [
@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "php": ">=5.3",
+    "php": ">=5.4",
     "ext-curl": "*",
     "ext-json": "*"
   },
