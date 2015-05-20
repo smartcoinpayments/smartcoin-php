@@ -4,7 +4,7 @@
 			$weight = 0.2; # Kg
 	    $origin_cep = 22280100; #RJ - Rio de Janeiro - Botafogo
 	    $destination_cep = 36600000; #MG - Bicas
-	    $expect_shipping_cost = 1650; #the current value that correios charge for PAC service without deal
+	    $expect_shipping_cost = 1780; #the current value that correios charge for PAC service without deal
 
 	    $shipping_info = \Smartcoin\Shipping::calculator(array('weight' => $weight, 'origin_cep' => $origin_cep,
 	    																											 'destination_cep' => $destination_cep));
@@ -15,7 +15,7 @@
 			$weight = 0.2; # Kg
 		  $origin_cep = 22280100; #RJ - Rio de Janeiro - Botafogo
 		  $destination_cep = 24230153; #RJ - Niterói - Icaraí
-		  $expect_shipping_cost = 1370; #the current value that correios charge for PAC service without deal
+		  $expect_shipping_cost = 1480; #the current value that correios charge for PAC service without deal
 
 		  $shipping_info = \Smartcoin\Shipping::calculator(array('weight' => $weight, 'origin_cep' => $origin_cep,
 	    																											 'destination_cep' => $destination_cep));
