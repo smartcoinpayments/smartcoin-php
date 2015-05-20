@@ -13,7 +13,6 @@
   require(dirname(__FILE__) . '/Smartcoin/Charge.php');
   require(dirname(__FILE__) . '/Smartcoin/SmartList.php');
   require(dirname(__FILE__) . '/Smartcoin/Error.php');
-  require(dirname(__FILE__) . '/Smartcoin/Util.php');
   require(dirname(__FILE__) . '/Smartcoin/Shipping.php');
   require(dirname(__FILE__) . '/Smartcoin/Customer.php');
   require(dirname(__FILE__) . '/Smartcoin/Plan.php');
