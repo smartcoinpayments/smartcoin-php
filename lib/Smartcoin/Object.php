@@ -72,6 +72,9 @@
         case 'subscription':
             $object_type = '\Smartcoin\Subscription';
             break;
+        case 'list':
+            $object_type = '\Smartcoin\SmartList';
+            break;
       }
       return $object_type;
     }
