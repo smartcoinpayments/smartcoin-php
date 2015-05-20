@@ -8,9 +8,14 @@ namespace Smartcoin;
       return "/v1/customers/{$customer}/subscriptions/";
     }
 
-  	public function __construct($customer=null) {
-  		$this->customer = $customer;
-  		parent::__construct(array(), \Smartcoin\Smartcoin::access_keys());
+  	public function __construct($params=null) {
+      $this->customer = $params;
+      if(is_array($params))
+        $this->customer = $params['customer'];
+      else
+        $params = array();
+
+      parent::__construct($params, \Smartcoin\Smartcoin::access_keys());
   	}
 
   	public function create($params) {
@@ -46,8 +51,7 @@ namespace Smartcoin;
 
       $url = self::get_request_url($this->customer);
       $r = \Smartcoin\APIRequest::request('get',$url, \Smartcoin\Smartcoin::access_keys());
-      $this->refresh_object(json_decode($r[0],true),\Smartcoin\Smartcoin::access_keys());
-      return $this;  
+      return new \Smartcoin\SmartList(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());  
     }
   }
 

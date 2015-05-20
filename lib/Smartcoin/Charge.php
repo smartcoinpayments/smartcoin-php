@@ -24,7 +24,7 @@ namespace Smartcoin;
     public static function list_all($params=null) {
       $url = self::get_request_url();
       $r = \Smartcoin\APIRequest::request('get',$url, \Smartcoin\Smartcoin::access_keys(), $params);
-     return new \Smartcoin\Object_List(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());
+      return new \Smartcoin\SmartList(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());
     }
 
     public function capture($params=null) {

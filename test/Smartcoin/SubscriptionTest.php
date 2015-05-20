@@ -64,6 +64,40 @@
       $sub = $cus->subscriptions()->create(array('plan' => $pl_params['id']));
       $sub_retrived = $cus->subscriptions()->retrieve($sub->id);
       $this->assertEqual($sub->id, $sub_retrived->id);
+      $this->assertNotNull($sub_retrived->current_period_start);
+      $this->assertNotNull($sub_retrived->current_period_end);
+      $this->assertEqual($sub_retrived->plan->id, $pl_params['id']);
+      $this->assertEqual($sub_retrived->plan->amount, $pl_params['amount']);
+    }
+
+    function test_retrive_subscription_from_customer() {
+      $cus_params = array(
+        "email" => "test@test.com",
+        "card" => array('number' => 5454545454545454,
+                      'exp_month' => 11,
+                      'exp_year' => 2017,
+                      'cvc' => 111,
+                      'name' => 'Doctor Who')
+        );
+      $cus = \Smartcoin\Customer::create($cus_params);
+
+      $pl_params = array(
+        'id' => ('plan_test' . self::randomString()),
+        'amount' => 1000,
+        'currency' => 'brl',
+        'interval' => 'month',
+        'name' => 'Plan Test'
+      );
+      $pl = \Smartcoin\Plan::create($pl_params);
+      $sub = $cus->subscriptions()->create(array('plan' => $pl_params['id']));
+
+      $subscriptions = $cus->subscriptions()->list_all();
+      $subscription = (sizeof($subscriptions) == 1) ? $subscriptions->data[0] : NULL;
+      $this->assertEqual($sub->id, $subscription->id);
+      $this->assertNotNull($subscription->current_period_start);
+      $this->assertNotNull($subscription->current_period_end);
+      $this->assertEqual($subscription->plan->id, $pl_params['id']);
+      $this->assertEqual($subscription->plan->amount, $pl_params['amount']);
     }
 
     function test_list_subscriptions() {

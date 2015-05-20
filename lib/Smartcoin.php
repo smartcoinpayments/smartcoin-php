@@ -1,5 +1,6 @@
 <?php
   namespace Smartcoin;
+  define("VERSION", "0.3.6");
 
   require(dirname(__FILE__) . '/Smartcoin/Object.php');
   require(dirname(__FILE__) . '/Smartcoin/APIRequest.php');
@@ -10,9 +11,8 @@
   require(dirname(__FILE__) . '/Smartcoin/Fee.php');
   require(dirname(__FILE__) . '/Smartcoin/Installment.php');
   require(dirname(__FILE__) . '/Smartcoin/Charge.php');
-  require(dirname(__FILE__) . '/Smartcoin/Object_List.php');
+  require(dirname(__FILE__) . '/Smartcoin/SmartList.php');
   require(dirname(__FILE__) . '/Smartcoin/Error.php');
-  require(dirname(__FILE__) . '/Smartcoin/Util.php');
   require(dirname(__FILE__) . '/Smartcoin/Shipping.php');
   require(dirname(__FILE__) . '/Smartcoin/Customer.php');
   require(dirname(__FILE__) . '/Smartcoin/Plan.php');

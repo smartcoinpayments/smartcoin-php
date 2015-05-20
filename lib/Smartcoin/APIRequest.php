@@ -92,6 +92,7 @@
       $opts[CURLOPT_URL] = $url;
       $opts[CURLOPT_USERPWD] = $api_keys;
       $opts[CURLOPT_HEADER] = 0;
+      $opts[CURLOPT_USERAGENT] = "Smartcoin PHP Api " . \VERSION;
       $opts[CURLOPT_RETURNTRANSFER] = true;
       $opts[CURLOPT_CONNECTTIMEOUT] = 30;
       $opts[CURLOPT_TIMEOUT] = 80;
