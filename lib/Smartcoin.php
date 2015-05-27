@@ -1,6 +1,6 @@
 <?php
-  namespace Smartcoin;
-  define("VERSION", "0.3.6");
+namespace Smartcoin;
+define("VERSION", "0.3.6");
 
 require(dirname(__FILE__) . '/Smartcoin/Object.php');
 require(dirname(__FILE__) . '/Smartcoin/APIRequest.php');

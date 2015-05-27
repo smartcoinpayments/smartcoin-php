@@ -26,12 +26,6 @@ class Charge extends \Smartcoin\Object
         return new Charge(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());
     }
 
-    public static function list_all($params=null) {
-      $url = self::get_request_url();
-      $r = \Smartcoin\APIRequest::request('get',$url, \Smartcoin\Smartcoin::access_keys(), $params);
-      return new \Smartcoin\SmartList(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());
-    }
-
     public function capture($params = null)
     {
         $url = self::get_request_url() . $this->id . '/capture';
@@ -52,5 +46,11 @@ class Charge extends \Smartcoin\Object
         $url = self::get_request_url() . $this->id;
         $r = \Smartcoin\APIRequest::request('post',$url, $this->api_keys, $params);
         $this->refresh_object(json_decode($r[0], true), $this->api_keys);
+    }
+
+    public static function list_all($params=null) {
+      $url = self::get_request_url();
+      $r = \Smartcoin\APIRequest::request('get',$url, \Smartcoin\Smartcoin::access_keys(), $params);
+      return new \Smartcoin\SmartList(json_decode($r[0],true), \Smartcoin\Smartcoin::access_keys());
     }
 }

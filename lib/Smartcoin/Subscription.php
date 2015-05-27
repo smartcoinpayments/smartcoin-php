@@ -9,6 +9,7 @@ class Subscription extends \Smartcoin\Object
     {
         return "/v1/customers/{$customer}/subscriptions/";
     }
+
     public function __construct($params = null)
     {
         $this->customer = $params;
