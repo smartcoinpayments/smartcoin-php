@@ -1,6 +1,7 @@
 <?php
 namespace Smartcoin;
 
-  class Smartcoin_Object extends \Smartcoin\Object {
-  }
-?>
+class Smartcoin_Object extends \Smartcoin\Object
+{
+    
+}
